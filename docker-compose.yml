@@ -1,0 +1,17 @@
+version: '3'
+services:
+  wacron:
+    image: localhost:5000/wacron:latest
+    volumes:
+      - ./config:/config
+    environment:
+      TZ: Asia/Jakarta
+    networks: [other]
+    restart: always
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+      - com.centurylinklabs.watchtower.no-pull=true
+
+networks:
+  other:
+    external: true
