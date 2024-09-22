@@ -1,0 +1,42 @@
+development: true
+print_query: false
+
+db_data_dsn: simko:simko123@tcp(192.168.99.2)/simko_data?charset=utf8mb4&parseTime=true
+db_gateway_dsn: simko:simko123@tcp(192.168.99.2)/simko_gateway?charset=utf8mb4&parseTime=true
+worker: 1
+iteration_limit: 10
+iteration_wait: true
+interval: 3s
+
+# # Draft
+operation_mo1de:
+  mode: all # all|deny|allow
+  allow: ["0999", "0060"]
+  aallow:
+    - "0002"
+    - "0003"
+    - "0005"
+    - "0006"
+    - "0010"
+    - "0012"
+    - "0013"
+    - "0016"
+    - "0022"
+    - "0023"
+    - "0025"
+    - "0031"
+    - "0033"
+    - "0035"
+    - "0036"
+    - "0040"
+    - "0041"
+    - "0051"
+    - "0112"
+    - "0113"
+    - "0119"
+    - "0123"
+    - "0125"
+    - "0127"
+    - "0999"
+  deny:
+    - "0999"
