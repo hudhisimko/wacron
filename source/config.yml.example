@@ -1,0 +1,17 @@
+development: true
+print_query: true
+
+db_data_dsn: simko:simko123@tcp(localhost)/msg_data?charset=utf8mb4&parseTime=true
+db_gateway_dsn: simko:simko123@tcp(localhost)/msg_gateway?charset=utf8mb4&parseTime=true
+worker: 4
+iteration_limit: 100
+interval: 500ms
+
+# # Draft
+operation_mode:
+  mode: allow # all|deny|allow
+  allow:
+    # - "0036"
+    - "0999"
+    - "0060"
+  deny:

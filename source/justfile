@@ -1,0 +1,18 @@
+set export
+set dotenv-load := true
+
+default:
+    just --list
+
+go cmd *args:
+    go {{cmd}} {{args}} ./cmd/. 
+
+run *args:
+    go run ./cmd/. {{args}}
+
+jet *args:
+    go run github.com/go-jet/jet/v2/cmd/jet@latest \
+        -source=mysql \
+        -path=./mysql/jetgen \
+        -dsn="$JET_DSN" \
+        {{args}}
